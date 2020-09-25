@@ -17,10 +17,22 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var questionLabel: UILabel!
+    @IBOutlet var answerLabel: UILabel!
+    
+    @IBAction func nextQuestionPressed(_ sender: UIButton) {
+        print("Hello from nextQuestionPressed()")
+    }
+    
+    @IBAction func showAnswerPressed(_ sender: UIButton) {
+        print("Hello from showAnswerPressed()")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         print("hello from viewDidLoad()")
+        questionLabel.text = "Hello from viewDidLoad()"
     }
 
 
