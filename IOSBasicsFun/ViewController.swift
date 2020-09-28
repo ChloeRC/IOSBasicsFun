@@ -16,16 +16,19 @@ import UIKit
 // Rest of notes on GitHub, Gina's version
 
 class ViewController: UIViewController {
+    var quizModel = QuizModel()
 
     @IBOutlet var questionLabel: UILabel!
     @IBOutlet var answerLabel: UILabel!
     
     @IBAction func nextQuestionPressed(_ sender: UIButton) {
         print("Hello from nextQuestionPressed()")
+        showNextQuestion()
     }
     
     @IBAction func showAnswerPressed(_ sender: UIButton) {
         print("Hello from showAnswerPressed()")
+        answerLabel.text = quizModel.getCurrentAnswer()
     }
     
     override func viewDidLoad() {
@@ -33,8 +36,13 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         print("hello from viewDidLoad()")
         questionLabel.text = "Hello from viewDidLoad()"
+        
+        showNextQuestion()
     }
 
-
+    func showNextQuestion() {
+        questionLabel.text = quizModel.getNextQuestion()
+        answerLabel.text = "<Answer>"
+    }
 }
 
